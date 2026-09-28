@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+class rectangle
+{
+private:
+    float length;
+    float breadth;
+public:
+    void input()
+    {
+        cout <<"Enter length: ";
+        cin >>length;
+        cout <<"Enter breadth: ";
+        cin >>breadth;  }
+    float area();
+    float peri();
+    void output();};
+float rectangle::area()
+{
+    return length * breadth;}
+float rectangle::peri()
+{
+    return 2 * (length + breadth);
+}
+void rectangle::output()
+{
+    cout<<"\nArea: "<<area()<<endl;
+    cout<<"Perimeter: " <<peri()<<endl;
+}
+int main(){
+    rectangle r;
+    r.input();
+    r.output();
+    return 0;}

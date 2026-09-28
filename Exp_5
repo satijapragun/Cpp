@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Book
+{
+private:
+    int id;
+    string nm;
+    float price;
+public:
+    Book(int i, string n, float p)
+    {
+        id = i;
+        nm = n;
+        price = p;
+        cout<<"Parameterized constructor called in background"<<endl; }
+    Book(const Book &b)
+    {
+        id = b.id;
+        nm = b.nm;
+        price = b.price;
+        cout<<"Copy constructor called in background"<<endl;  }
+     void output()
+    {
+        cout<<"Book ID: " <<id<<endl;
+        cout<<"Book Name: " <<nm<<endl;
+        cout<<"Price: "<<price<<endl;
+    }
+    ~Book()
+    {
+        cout<<"Destructed: " << nm << endl;
+    }};
+int main(){
+    Book b1(105, "Literature 101", 1000);
+    cout<<"\nBook 1:" <<endl;
+    b1.output();
+    Book b2(b1);
+    cout << "\nBook 2:" << endl;
+    b2.output();
+    return 0;}
+
